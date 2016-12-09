@@ -9,6 +9,7 @@ def tnSend(command):
 	HOST, PORT = "localhost", 9999
 	tn = telnetlib.Telnet(HOST, port = PORT)
 	tn.write(command+"\r\n")
+	tn.close()
 	
 	
 @app.route("/")
