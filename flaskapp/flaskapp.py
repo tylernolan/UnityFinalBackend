@@ -25,7 +25,8 @@ def login():
 def welcome(name):
 	while "," in name:
 		name = name.replace(",", "")
-	page = '<form action="." method="POST">\n'
+	page = u'<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+	page += '<form action="." method="POST">\n'
 	page += "Spawn Enemies:<br>"
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "0", "Spawn Skele")
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "1", "Spawn Mage")
