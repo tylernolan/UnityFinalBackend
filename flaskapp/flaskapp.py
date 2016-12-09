@@ -25,10 +25,16 @@ def welcome(name):
 	while "," in name:
 		name = name.replace(",", "")
 	page = '<form action="." method="POST">\n'
+	page += "Spawn Enemies:<br>"
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "0", "Spawn Skele")
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "1", "Spawn Mage")
+	page += "<br>"
+	page += "Heal Player:<br>"
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "2", "Heal")
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "3", "Regen Mana")
+	page += "<br>"
+	page += "Other:<br>"
+	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "4", "Smite Enemy")
 	page +='</form>'	
 	return page
 	
