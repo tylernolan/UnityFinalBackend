@@ -31,12 +31,13 @@ def welcome(name):
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "0", "Spawn Skele")
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "1", "Spawn Mage")
 	page += "<br>"
-	page += "Heal Player:<br>"
+	page += "Help Player:<br>"
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "2", "Heal")
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "3", "Regen Mana")
+	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "4", "Smite Enemy")
 	page += "<br>"
 	page += "Other:<br>"
-	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "4", "Smite Enemy")
+	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "5", "Say Nice Things")
 	page +='</form>'	
 	return page
 	
