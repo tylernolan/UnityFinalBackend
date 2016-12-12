@@ -2,9 +2,14 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from flask import redirect
-
+from urllib import urlopen
 import telnetlib
 app = Flask(__name__)
+
+#It's not often for class projects it's encouraged to enumerate all the swear words you can think of!
+#On second thought, let's source this from elsewhere...
+swearlist = urlopen("http://www.bannedwordlist.com/lists/swearWords.txt").readlines()
+
 def tnSend(command):
 	HOST, PORT = "localhost", 9999
 	tn = telnetlib.Telnet(HOST, port = PORT)
@@ -25,6 +30,8 @@ def login():
 def welcome(name):
 	while "," in name:
 		name = name.replace(",", "")
+	for word in swearlist:
+		name = re.sub(word, "*"*len(word), name)
 	if len(name) > 12:
 		name = name[:12] 
 	page = u'<meta name="viewport" content="width=device-width, initial-scale=1.0">'
