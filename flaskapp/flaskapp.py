@@ -32,7 +32,10 @@ def welcome(name):
 	while "," in name:
 		name = name.replace(",", "")
 	for word in swearlist:
-		name = re.sub(word, "*"*len(word), name)
+		word = word.strip()
+		r = re.compile(word, re.IGNORECASE)
+		name = r.sub("*"*len(word), name)
+		print word
 	if len(name) > 12:
 		name = name[:12] 
 	page = u'<meta name="viewport" content="width=device-width, initial-scale=1.0">'
