@@ -2,7 +2,7 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from flask import redirect
-from urllib import urlopen
+import re
 import telnetlib
 app = Flask(__name__)
 
