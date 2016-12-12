@@ -25,6 +25,8 @@ def login():
 def welcome(name):
 	while "," in name:
 		name = name.replace(",", "")
+	if len(name) > 12:
+		name = name[:12] 
 	page = u'<meta name="viewport" content="width=device-width, initial-scale=1.0">'
 	page += '<form action="." method="POST">\n'
 	page += "Spawn Enemies:<br>"
