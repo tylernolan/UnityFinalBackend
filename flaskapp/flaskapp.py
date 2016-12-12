@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 #It's not often for class projects it's encouraged to enumerate all the swear words you can think of!
 #On second thought, let's source this from elsewhere...
-swearlist = urlopen("http://www.bannedwordlist.com/lists/swearWords.txt").readlines()
+#Source: http://www.bannedwordlist.com/lists/swearWords.txt
+swearlist = open("swears.txt")
 
 def tnSend(command):
 	HOST, PORT = "localhost", 9999
