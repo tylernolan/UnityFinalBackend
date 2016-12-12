@@ -47,6 +47,9 @@ def welcome(name):
 	page += "Help Player:<br>"
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "2", "Heal")
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "3", "Regen Mana")
+	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "6", "Empower Weapon")
+	page += "<br>"
+	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "7", "Give Barrier")
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "4", "Smite Enemy")
 	page += "<br>"
 	page += "Other:<br>"
