@@ -38,7 +38,7 @@ def welcome(name):
 	page += "<br>"
 	page += "Other:<br>"
 	page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "5", "Say Nice Things")
-	page += u'<value="{},{}">{}</button>\n'.format(str(name), "Say Nothing at All", "Say Not Nice Things")
+	page += u'<button name ="action"><value="{},{}">{}</button>\n'.format(str(name), "Say Nothing at All", "Say Not Nice Things")
 	page +='</form>'	
 	return page
 	
