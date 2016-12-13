@@ -80,7 +80,7 @@ def welcome(name):
 		page +="<body>\n"
 		page +="<h2>Give Me Your Energy!</h2>\n"
 		#page += '<img src = {} style="width:304px;height:228px;">'.format(img)
-		page += '<form action="." method="POST"><button type="submit" name="action" value="{}, -1 style="border:0;"> <img src = {} style="width:304px;height:228px;"> </button></form>'.format(name, img)
+		page += '<form action="." method="POST"><button type="submit" name="action" value="{}, -1" style="border:0;"> <img src = {} style="width:304px;height:228px;"> </button></form>'.format(name, img)
 		page +="</body>\n"
 		page +="</html>\n"
 		return page
@@ -95,4 +95,4 @@ def act():
 	return redirect('/welcome/{}'.format(action.split(",")[0]))
 	
 if __name__ == "__main__":
-	app.run(host= '0.0.0.0', debug=True)
+	app.run(host= '0.0.0.0')
