@@ -77,6 +77,7 @@ def welcome(name):
 		page = ""
 		page +="<!DOCTYPE html>\n"
 		page +="<html>\n"
+		page = u'<meta name="viewport" content="width=device-width, initial-scale=1.0">'
 		page +="<body>\n"
 		page +="<h2>Give Me Your Energy!</h2>\n"
 		#page += '<img src = {} style="width:304px;height:228px;">'.format(img)
