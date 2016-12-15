@@ -28,7 +28,7 @@ class ServerFactory(Factory):
 	def __init__(self):
 		#these variables are in lists to allow me to pass them by reference into Server and maintain state. They should always only contain 1 value.
 		self.clientConn = [None]
-		self.state = [False]
+		self.state = ["Main"]
 	def buildProtocol(self, addr):
 		return Server(self.clientConn, self.state)
 if __name__ == "__main__":
