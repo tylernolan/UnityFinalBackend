@@ -1,0 +1,851 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"63eaf86cde","applicationID":"27734654","transactionName":"bgZTMEFVC0BXARVaCVdMfDJwGypBUgcTQCVWDUUWXFgJVkRNDFIIWARUC0FQAEE=","queueTime":0,"applicationTime":310,"agent":"","atts":""}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+    <title>Manage Order</title>
+    <link href="/admin/Content/base.css?v=3109" rel="stylesheet" type="text/css" />
+    <link href="/admin/Content/main.css?v=3109" rel="stylesheet" type="text/css" />
+    <link href="/admin/Content/Site.css?v=3109" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="screen">
+    <script src="/admin/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="/admin/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+    <script src="/admin/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/admin/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    <script src="/admin/Scripts/jquery-ui-1.8.11.min.js" type="text/javascript"></script>
+    <script src="/admin/Scripts/jquery.maskedinput-1.2.2.js" type="text/javascript"></script>
+    <script src="/admin/Scripts/Site.js?v=3109" type="text/javascript"></script>
+    <script src="/admin/Scripts/autocomplete.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var SITEROOT = '/admin/';
+
+    /* Session Timeout Warning variables */
+    var _popupTimer, _countDownTimer, _timeLeftInSeconds;
+    var sessionTimeoutWarningInMinutes = 2;
+    var timeoutWarningDelayInSeconds = 1680000;
+
+    $(document).ajaxComplete(function() {
+        if ( 'False' === 'False')
+        {
+            //Reset the session timeout timer after every ajax call
+            scheduleTimeoutWarningPopup();
+        }
+    });
+
+    $(document).ready(function () {
+
+        if ( 'False' === 'False')
+        {
+            //On every page load, start the timer to show the session timeout warning dialog
+            scheduleTimeoutWarningPopup();
+        }
+
+        $('#feedback-dialog').dialog(
+        {
+            autoOpen: false,
+            resizable: false,
+            width: 'auto',
+            modal: true,
+            title: 'Feedback'
+        });
+
+        $('#SiteFeedbackForm').submit(function() {
+            if ($(this).valid() && !DoesFeedbackContainHtml()) {
+                HideFeedbackSubmit();
+                $.ajax({
+                    url: SITEROOT + 'home/SubmitFeedback',
+                    data: { ClickedFromFeature: $('#ClickedFromFeature').val(), UserEnteredFeature: $('#UserEnteredFeature').val(), Body: $('#Body').val() },
+                    type: 'POST'
+                })
+                    .done(function(data) { $('#feedback-dialog').html(data); })
+                    .fail(function() {
+                        alert('There was an error submitting your feedback.  Please try again');
+                        ShowFeedbackSubmit();
+                    });
+                return false;
+            } else {
+                return false;
+            }
+        });
+    });
+
+
+    </script>
+    
+    <link href="/admin/Content/OrderContent/css/fontello.css?v=3109" rel="stylesheet" type="text/css" />
+    <link href="/admin/Content/OrderContent/css/animation.css?v=3109" rel="stylesheet" type="text/css" />
+    <link href="/admin/Content/OrderContent/css/buttons.css?v=3109" rel="stylesheet" type="text/css" />
+
+        <link href="/admin/Content/Order.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+
+                $('#fullRefundDialog').dialog(
+                {
+                    autoOpen: false,
+                    resizable: false,
+                    width:'420',
+                    modal: true,
+                    title: 'Full Refund'
+                });
+
+                $('#shipWithoutTrackingDialog').dialog(
+                {
+                    autoOpen: false,
+                    resizable: false,
+                    width: 'auto',
+                    modal: true,
+                    title: 'Ship Without Tracking'
+                });
+
+                $('#addTrackingNumberDialog').dialog(
+                {
+                    autoOpen: false,
+                    resizable: false,
+                    width: 'auto',
+                    modal: true,
+                    title: 'Add Tracking Number'
+                });
+
+                $('.hideTrackingNumberDialog').dialog(
+                {
+                    autoOpen: false,
+                    resizable: false,
+                    width: 'auto',
+                    modal: true,
+                    title: 'Hide Tracking Number'
+                });
+
+                $('#addPaymentAdjustmentDialog').dialog(
+                {
+                    autoOpen: false,
+                    resizable: false,
+                    width: 'auto',
+                    modal: true,
+                    title: 'Add Adjustment'
+                });
+
+                $('.RefundDetailsDialog').dialog(
+                {
+                    autoOpen: false,
+                    resizable: false,
+                    width: '80%',
+                    modal: true,
+                    title: 'Refund Details'
+                });
+
+                $('#FullRefundForm').submit(function() {
+                    if($(this).valid() && ValidateMessage()) {
+                        if(confirm('Are you sure you want to give a FULL refund for this order?  This action CANNOT be undone.')) {
+                            HideFullRefundSubmit();
+                        }
+                        else {
+                            return false;
+                        }
+                    }
+                    else {
+                        return false;
+                    }
+                })
+
+                $('#ShipWithoutTrackingForm').submit(function () {
+                    if ($(this).valid()) {
+                        HideShipWithoutTrackingSubmit()
+                    }
+                    else {
+                        return false;
+                    }
+                })
+            });
+
+            function GetSellerOrderNotes(sellerOrderId) {
+                var jqxhr = $.ajax({
+                    url: SITEROOT + 'orders/sellerordernotes/' + sellerOrderId,
+                    cache: false,
+                    success: function (data) {
+                        $('#SellerOrderNoteTablePlaceHolder').html(data);
+                    },
+                    error: function () {
+                        $('#SellerOrderNoteTableError').show();
+                    }
+                }).always(function () {
+                    $('#SellerOrderNoteTableLoading').hide();
+                });
+            }
+
+
+            function ValidateMessage(){
+                var totalAmt = parseFloat($('#totalRefundAmount').text().replace('$', ''));
+                if($('#Message').val().replace(/ /g, '') == '') 
+                {
+                    $('#Message').addClass('input-validation-error');
+                    $('#MessageValidator').html('<font color=red>You must provide a message</font>');
+                    $('#MessageValidator').show();
+                    return false;
+                }
+                else
+                {
+                    $('#MessageValidator').hide();
+                    return true;
+                }
+            }
+
+            function ShowFullRefundDialog() {
+                $('#fullRefundDialog').dialog('open');            
+                var validator = $('#FullRefundForm').validate();
+                validator.resetForm();
+                $('#FullRefundForm .field-validation-error').hide();
+                $('#Message').val('');
+                $('#actualButtons').show();
+                $('#processingDiv').hide();
+
+            }
+
+            function HideFullRefundDialog() {
+                $('#fullRefundDialog').dialog('close');
+            }
+
+            function HideFullRefundSubmit() {
+                $('#actualButtons').hide();
+                $('#processingDiv').show();
+
+                return true;
+            }
+
+            function ShowShipWithoutTrackingDialog() {
+                $('#shipWithoutTrackingDialog').dialog('open');
+                var validator = $('#ShipWithoutTrackingForm').validate();
+                validator.resetForm();
+                $('#ShipWithoutTrackingForm .field-validation-error').hide();
+                $('#AgreeToTerms').attr('checked', false);
+                $('#shipWithoutTrackingActualButtons').show();
+                $('#shipWithoutTrackingProcessingDiv').hide();
+            }
+
+            function HideShipWithoutTrackingDialog() {
+                $('#shipWithoutTrackingDialog').dialog('close');
+            }
+
+            function HideShipWithoutTrackingSubmit() {
+                $('#shipWithoutTrackingActualButtons').hide();
+                $('#shipWithoutTrackingProcessingDiv').show();
+
+                return true;
+            }
+
+            function ShowAddPaymentAdjustmentDialog(isFullCredit) {                                
+                $('#addPaymentAdjustmentDialog').dialog('open');
+                $('#AddPaymentAdjustmentForm .field-validation-error').hide();
+                $('#AdjustmentAmt').val('');
+                $('#AdjustmentReason').val('');
+
+                if (isFullCredit) {
+                    $('#AdjustmentAmt').val('3.23');
+                    $('#AdjustmentReason').val('Credit for #09066-2C1B54-EBB09');
+                }
+            }
+
+            function HideAddPaymentAdjustmentDialog() {
+                $('#addPaymentAdjustmentDialog').dialog('close');
+            }
+
+            function SubmitPaymentAdjustment() {
+                $('#AddPaymentAdjustmentForm').submit();
+            }
+
+            function ShowAddTrackingNumberDialog() {
+                $('#addTrackingNumberDialog').dialog('open');
+                var validator = $('#AddTrackingNumberForm').validate();
+                validator.resetForm();
+                $('#AddTrackingNumberForm .field-validation-error').hide();
+                $('#TrackingNumberTextBox').val('');
+                $('#TrackingNumberValidationMessage').text('');
+                ShowAddTrackingNumberSubmit();
+            }
+
+            function ShowHideTrackingNumberDialog(trackingNumberId) {
+                $('#hideTrackingNumberDialog' + trackingNumberId).dialog('open');
+            }
+
+            function HideHideTrackingNumberDialog(trackingNumberId) {
+                $('#hideTrackingNumberDialog' + trackingNumberId).dialog('close');
+            }
+
+            var trackingValidated = false;
+            function ValidateTrackingNumber() {
+                HideAddTrackingNumberSubmit();
+                SetTrackingValidated(false);
+
+                $.ajax({
+                    type: 'post',
+                    url: '../ValidateTrackingNumber',
+                    datatype: 'html',
+                    data: $('#AddTrackingNumberForm').serialize(),
+                    success: function (result, textStatus, jqXHR) {
+                        if (result.IsValid) {
+                            SetTrackingValidated(true);
+                            $('#AddTrackingNumberForm').submit();
+                        }
+                        else {
+                            $('#TrackingNumberValidationMessage').text(result.Message);
+                            ShowAddTrackingNumberSubmit();
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown){
+                        $('#TrackingNumberValidationMessage').text('AJAX Error: textStatus = ' + textStatus + ', errorThrown =  ' + errorThrown);
+                        ShowAddTrackingNumberSubmit();
+                    }
+                });
+            }
+
+            function IsTrackingValidated() {
+                return trackingValidated;
+            }
+
+            function SetTrackingValidated(value) {
+                trackingValidated = value;
+            }
+
+            function PostToShipWithoutTracking(orderNum) {
+
+                $.ajax({
+                    type: 'post',
+                    url: '../ShipWithoutTrackingNoPopup',
+                    data: { "orderNum": orderNum },
+                    success: function (response) {
+                    
+                        window.location.href = response.Url;
+                    }
+                });
+            }
+
+            function HideAddTrackingNumberDialog() {
+                $('#addTrackingNumberDialog').dialog('close');
+            }
+
+            function HideAddTrackingNumberSubmit() {
+                $('#addTrackingNumberActualButtons').hide().fadeOut('fast');
+                $('#addTrackingNumberProcessingDiv').show().fadeIn('fast');
+
+                return true;
+            }
+
+            function ShowAddTrackingNumberSubmit() {
+                $('#addTrackingNumberActualButtons').show().fadeIn('fast');
+                $('#addTrackingNumberProcessingDiv').hide().fadeOut('fast');
+
+                return true;
+            }
+
+            function OpenPackingSlip(orderNumber) {
+                var orders = new Array();         
+                orders.push('09066-2C1B54-EBB09');
+                var title = "Generating Packing Slip";
+
+                tcgSpin(title);
+
+                $.ajax({
+                    url: '/admin/Orders/CreatePackingList',
+                    type: 'POST',
+                    data: JSON.stringify({ 'orders': orders }),
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    async: true,
+                    success: function (data) {
+                        if (data != null) {
+                            //If we have an ID, everything went alright, and we direct the user to the download link.
+                            if ($("#CancelDownload").val() != "true") {
+                                window.location = '/admin/Orders/PrintPackingList/' + data.ID;
+                            }
+                        }
+                        $("#MessageModal").dialog("close");
+                    }
+                });
+            }
+
+            function tcgSpin(title) {
+                $("#CancelDownload").val(false);
+
+                $("#MessageModal").dialog({
+                    modal: true,
+                    draggable: false,
+                    resizable: false,
+                    position: { of: '.modalPosition', at: 'top', my: 'top' },
+                    beforeClose: function (event, ui) {
+                        $("#CancelDownload").val(true);
+                    }
+                });
+
+                $('#MessageModal').dialog('option', 'title', title);
+
+                return this;
+            }
+
+            function ShowRefundDetailsDialog(refundId) {
+                $('#refundDetailsDialog' + refundId).dialog('open');
+            }
+        </script>
+
+
+</head>
+<body>
+    <div class="large-popup-bg" id="editProductPopup" style="display: none">
+
+    </div>
+
+    <div class="large-popup-bg" id="finalizePopup" style="display: none">
+
+    </div>
+    <div id="header">
+        <div class="logo">
+            <a href="/admin/"><img alt="TCGPlayer.com Admin Panel" src="/admin/Content/images/logo.jpg" /></a>
+        </div>
+
+            <div style="float:left;margin-top:37px" class="middleNav">
+                <ul>
+                    <li class="mUser last_user">
+                        <a href="javascript:void(0)" onclick="ShowFeedbackDialog()"><span class="users">Submit Feedback</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        <div class="tcg_admin">
+            <!--USER LINKS-->
+            <div class="mUser_wrapper">
+                <!--WELCOME-->
+                <div class="middleNav welcome">
+                        <span>
+        WELCOME
+        trynetend@gmail.com
+             [ <a href="/admin/Account/Settings">Account</a> ]
+        [ <a href="/admin/Account/LogOff">Log Off</a> ]
+    </span>
+
+                </div>
+            </div>
+
+
+            <div class="clear"></div>
+
+            <!--MAIN TOP LINKS-->
+            <div class="top_header">
+                <div class="controlB">
+                    <ul>
+                            <li class="first_top_nav"><a title="Home" href="/admin/" class=""><span>Home</span></a></li>
+                                    <li><a title="Inventory" href="/admin/product/catalog" class=""><span>Inventory</span></a></li>
+                                    <li><a title="Pricing" href="/admin/Pricing" class=""><span>Pricing</span></a></li>
+                                        <li><a title="Orders" href="/admin/orders/orderlist" class="pressed"><span>Orders (4)</span></a></li>
+                                        <li><a title="Messages" href="/admin/message" class=""><span>Messages (62)</span></a></li>
+                                    <li><a title="Feedback" href="/admin/seller/feedback" class=""><span>Feedback</span></a></li>
+                                    <li><a title="Payments" href="/admin/payment/sellerpayment" class=""><span>Payments</span></a></li>
+                                    <li><a title="Reports" href="/admin/report" class=""><span>Reports</span></a></li>
+                                    <li><a title="Settings" href="/admin/seller/edit" class=""><span>My Details</span></a></li>
+                            <!--<li class="last_top_nav"><a title="Help" href="/admin/help" class=""><span>Help</span></a></li>-->
+                                                                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+
+    
+
+    <div id="rightSide">
+        <div class="wrapper">
+            
+            <div class="nNote nSuccess hideit" style="display: none;">
+                <div class="nNote-container">
+                    <ul>
+                        <li id="HeaderSuccessMessagePostPageLoadDisplay"></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Dynamic widgets with location = Top -->
+
+            <!-- Dynamic widgets with location = Left/Right -->
+
+
+ 
+<input type="hidden" id="CancelDownload" />
+        <div class="widget">
+            <div class="title">
+                <h6>
+                        Order Actions
+                </h6>
+                <div class="title-nav">
+                    <a href="/admin/orders/orderlist">Order List</a>
+                </div>
+            </div>
+        
+            <div class="widget-content">
+                             <div style="display: inline-block; margin: 8px 0px 1px 5px;">
+            <div class="middleNav" style=";">
+                <ul>
+                                    <li class="mUser"><a href="/admin/orders/BlockBuyer/09066-2C1B54-EBB09?buyerid=683867&amp;sellerKey=b94a1944" id="ActionLink_BlockBuyer"><span class="users">Block Buyer</span></a></li>
+ 
+                </ul>
+            </div>
+        </div>
+        <div style="display: inline-block; margin: 8px 0px 1px 5px;">
+            <div class="middleNav" style=";">
+                <ul>
+                                    <li class="mUser"><a href="javascript:void(0)" onclick="ShowFullRefundDialog()" id="ActionLink_FullRefund"><span class="users">Full Refund</span></a></li>
+                                    <li class="mUser"><a href="/admin/orders/PartialRefund/09066-2C1B54-EBB09?sellerKey=b94a1944" id="ActionLink_PartialRefund"><span class="users">Partial Refund</span></a></li>
+ 
+                </ul>
+            </div>
+        </div>
+
+                                            </div>
+        </div>  
+    <div class="widgets">
+        <div class="oneThree">
+            <div class="widget">
+                    <div class="title modalPosition"><h6>Shipping Address</h6></div>
+                                    <div class="widget-content">
+                            <div style="float:left;"><a href="/admin/orders/orderlist/zYWld4XmBJChWHLtjkrGuw2">Dean Zack Jr</a><br />
+38909 NW Goose Hill Ave<br />
+Woodland, WA 98674                            </div>
+                        <div class="clear"></div>
+                            <div class="middleNav" style="float:left;margin-top:10px">
+                                <ul>
+                                    <li class="mUser">
+                                        <a href="javascript:void(0)" onclick="OpenPackingSlip('09066-2C1B54-EBB09')"><span class="users">Print Packing Slip</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                    </div>
+            </div>
+            <div class="widget" style="float:left;">
+                <div class="title"><h6>Shipping Information</h6></div>
+                <table class="display sTable">
+                        <tr>
+                            <td>Shipping Method</td>
+                            <td>
+ 
+                                Standard (6-8 days)
+                            </td>
+                        </tr>
+                </table> 
+             
+
+                    <table id="tracking" class="display sTable" style="margin-top:10px">
+                    <thead>
+                        <tr>
+                            <th>Carrier</th>
+                            <th>Status</th>
+                            <th>Tracking #</th>        
+                        </tr>
+                    </thead>            
+                            <tr><td colspan="3">No Tracking Information</td></tr>
+                
+                    </table>
+                        <div style="height: 43px; width: 100%;">
+                            <div style="float: left; margin-left: 7px;">
+                                        <div style="display: inline-block; margin: 8px 0px 1px 5px;">
+            <div class="middleNav" style=";">
+                <ul>
+                                    <li class="mUser"><a href="javascript:void(0)" onclick="ShowAddTrackingNumberDialog()" id="ActionLink_Nothing"><span class="users">Add Tracking Number</span></a></li>
+ 
+                </ul>
+            </div>
+        </div>
+
+                            </div>
+                            <div style="float: right;">
+                                        <div style="display: inline-block; margin: 8px 0px 1px 5px;">
+            <div class="middleNav" style=";">
+                <ul>
+                                    <li class="mUser"><a href="javascript:void(0)" onclick="PostToShipWithoutTracking(&#39;09066-2C1B54-EBB09&#39;)" id="ActionLink_Nothing"><span class="users">Ship Without Tracking</span></a></li>
+ 
+                </ul>
+            </div>
+        </div>
+
+                            </div>
+                        </div>
+                </div>        
+        </div>
+        <div id="billing" class="oneThree">
+        <div class="widget">
+        <div class="title"><h6>Feedback</h6></div>
+                <div style="padding:10px">No Feedback Available</div>
+    </div>
+        </div>
+        <div class="oneThree">
+            <div class="widget">
+                <div class="title"><h6>General Info</h6></div>
+                <table class="display sTable">
+                                        <tr>
+                        <td>Order #</td>
+                        <td>#09066-2C1B54-EBB09</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>Ready to Ship</td>
+                    </tr>
+                    <tr>
+                        <td>Order Date</td>
+                        <td>12/13/2016 12:23:57 AM</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="middleNav" style="float:left;">
+                                <ul>
+                                    <li class="mUser">
+                                        <span class="users"><a href="/admin/message/newthread/09066-2C1B54-EBB09">Contact Buyer</a></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </td>
+                    </tr>
+                                    </table>
+            </div>
+                        <div class="widget">
+                <div class="title"><h6>Transaction Details</h6></div>
+                <table id="transaction" class="display sTable">
+                    <tr>
+                        <td>Product Amount:</td>
+                        <td><div class="manageorder-grid-ralign">$4.19</div></td>
+                    </tr>
+                    <tr>
+                        <td>Shipping Cost:</td>
+                        <td><div class="manageorder-grid-ralign">$0.00</div></td>
+                    </tr>
+                    <tr>
+                        <td>Order Amount:</td>
+                        <td><div class="manageorder-grid-ralign"><b>$4.19</b></div></td>
+                    </tr>
+                    <tr>
+                        <td>Fee Amount:</td>
+                        <td><div class="manageorder-grid-ralign">($0.96)</div></td>
+                    </tr>
+                    <tr>
+                        <td>Net Amount:</td>
+                        <td><div class="manageorder-grid-ralign">$3.23</div></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="clear"></div>
+    <div class="widget">
+        <div class="title"><h6>Products</h6></div>
+        <div class="dataTables_wrapper">
+            <table class="display sTable">
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Cost</th>
+            </tr>
+            </thead>
+                    <tr class="gradeA odd">
+
+                            <td><a href="../../../productcatalog/product/productsearch?id=106041" target="_blank">YuGiOh - High-Speed Riders: Black Rose Moonlight Dragon  - #HSRD-EN044  - Super Rare - 1st Edition - Near Mint</a></td>
+                        
+                        <td><div class="manageorder-grid-ralign">$4.19</div></td>
+                        <td><div class="manageorder-grid-ralign">1</div></td>
+                        <td><div class="manageorder-grid-ralign">$4.19</div></td>
+                    </tr>
+        
+            </table>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="clear"></div>
+    <div id="fullRefundDialog" style="display:none;">
+        <div id="fullRefundWaitDiv" style="display: none; width: 400px;">
+            <center>
+                <br />
+                <p>Loading. Please wait.</p>
+                <img src="/admin/Content/images/wait.gif" alt="Loading. Please wait."/>
+            </center>
+        </div>
+
+<form action="/admin/Orders/FullRefund" class="form" id="FullRefundForm" method="post" style="text-align:left">            <div id="fullRefundContentDiv">        
+<div style="width:400px;">    
+    <input data-val="true" data-val-number="The field OrderId must be a number." data-val-required="The OrderId field is required." id="OrderId" name="OrderId" type="hidden" value="4885593" />
+    <input data-val="true" data-val-number="The field SellerId must be a number." id="SellerId" name="SellerId" type="hidden" value="9066" />
+    <input data-val="true" data-val-number="The field SellerOrderId must be a number." data-val-required="The SellerOrderId field is required." id="SellerOrderId" name="SellerOrderId" type="hidden" value="19062773" />
+    <input data-val="true" data-val-number="The field DirectOrderId must be a number." data-val-required="The DirectOrderId field is required." id="DirectOrderId" name="DirectOrderId" type="hidden" value="0" />
+    <div style="font-size:12px">This action will give the customer a <span style="font-weight:bold">FULL</span> refund for their order.  This action cannot be undone.</div>
+    <div style="font-size:12px;color:#FF0000;margin:10px 0 10px 0">
+        Please provide a message below that will be displayed in the buyer's Order History and sent to the buyer in an email. <br />
+        Remember to keep customer service in mind when providing the reason for this refund as they can leave negative feedback.
+    </div>
+    <textarea cols="20" data-val="true" maxlength="500" data-val-length="Message must be less than 501 characters" data-val-length-max="500" data-val-required="You must provide a message." id="Message" name="Message" rows="2" style="width:344px;height:200px"></textarea>
+    <span class="field-validation-valid" data-valmsg-for="Message" data-valmsg-replace="true" id="MessageValidator"></span>
+    <div class="buttons" id="actualButtons">
+        <input id="fullRefundSubmit" type="submit" value="Give Refund" /><span class="cancel-link">&nbsp;or <a href="javascript:void(0)" onclick="HideFullRefundDialog()">Cancel</a></span>        
+    </div>
+    
+    <div class="buttons" id="processingDiv" style="display:none">
+        Processing...Please wait
+    </div>
+</div>            </div>
+</form>    </div>
+    <div id="shipWithoutTrackingDialog" style="display:none">
+        <div style="width:400px;">
+<form action="/admin/Orders/ShipWithoutTracking" class="form" id="ShipWithoutTrackingForm" method="post" style="text-align:left"><input id="SellerOrderNumber" name="SellerOrderNumber" type="hidden" value="09066-2C1B54-EBB09" />        <div style="font-size:12px">
+            <b>By confirming shipment on this order I agree that I have shipped or will be shipping this package today.</b>            
+        </div>
+        <div style="font-size:12px;margin:10px 0 10px 0;padding: 10px 0px 10px 0px;">
+            <table>
+                
+                <tr>
+                    <td style="width: 25px">
+                        <input data-val="true" data-val-booleanrequired="You must agree to the terms." data-val-required="The AgreeToTerms field is required." id="AgreeToTerms" name="AgreeToTerms" type="checkbox" value="true" /><input name="AgreeToTerms" type="hidden" value="false" />
+                    </td>
+                    <td>
+                        I understand that it is my responsibility to deliver the items in this order to the Buyer and I waive my ability to win any disputes if the customer says the package did not arrive should I choose to not provide TCGPlayer with Tracking / Delivery Confirmation.<br />
+                        <span class="field-validation-valid" data-valmsg-for="AgreeToTerms" data-valmsg-replace="true"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+            <div style="font-size:12px; padding-bottom: 10px;">
+                <table>
+                    <tr>
+                        <td style="width:25px">
+                            <input data-val="true" data-val-required="The AgreeToWaiver field is required." id="AgreeToWaiver" name="AgreeToWaiver" onclick="ToggleDoNotShowAgainText();" type="checkbox" value="true" /><input name="AgreeToWaiver" type="hidden" value="false" />
+                        </td>
+                        <td>
+                            For future orders under $20.00 do not show this Popup Message.
+                        </td>
+                    </tr>
+                    
+                    <tr id="WaiverAgreementRow" style="display:none; color:red;">
+                        <td></td>
+                        <td>
+                            On 12/13/2016, I agree I have read, understood and will abide by the shipping policy waiver listed above.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <div class="buttons" id="shipWithoutTrackingActualButtons">
+            <input id="shipWithoutTrackingSubmit" type="submit" value="Agree" /><span class="cancel-link">&nbsp;or <a href="javascript:void(0)" onclick="HideShipWithoutTrackingDialog()">Cancel</a></span>
+        </div>
+        <div class="buttons" id="shipWithoutTrackingProcessingDiv" style="display:none">
+            Processing...Please wait
+        </div>
+</form></div>
+
+<script type="text/javascript">
+
+    function ToggleDoNotShowAgainText() {
+        $('#WaiverAgreementRow').toggle();
+    }
+
+</script>
+    </div>
+    <div id="addTrackingNumberDialog" style="display:none">
+        <div style="width:310px;">
+<form action="/admin/Orders/NewTracking" class="form" id="AddTrackingNumberForm" method="post" onsubmit="return IsTrackingValidated();" style="text-align:left">        <div id="TrackingNumberValidationMessage" style="color: red;"></div>
+<input data-val="true" data-val-number="The field SellerOrderId must be a number." id="SellerOrderId" name="SellerOrderId" type="hidden" value="19062773" /><input data-val="true" data-val-number="The field SellerId must be a number." data-val-required="The SellerId field is required." id="SellerOrder_SellerId" name="SellerOrder.SellerId" type="hidden" value="9066" /><input id="TrackingNumberTextBox" name="Value" type="text" value="" />        <div class="clear"></div>
+        <br />
+        <div class="buttons" id="addTrackingNumberActualButtons">
+            <input id="addTrackingNumberSubmit" type="button" value="Save" onclick="ValidateTrackingNumber();" /><span class="cancel-link">&nbsp;or <a href="javascript:void(0)" onclick="HideAddTrackingNumberDialog()">Cancel</a></span>
+        </div>
+        <div class="buttons" id="addTrackingNumberProcessingDiv">
+            Processing...Please wait
+        </div>
+</form></div>
+    </div>
+    <div id="addPaymentAdjustmentDialog" style="display:none">
+        <div>
+<form action="/admin/Orders/AddPaymentAdjustment" class="form" id="AddPaymentAdjustmentForm" method="post" style="text-align:left"><input data-val="true" data-val-number="The field SellerId must be a number." data-val-required="The SellerId field is required." id="SellerId" name="SellerId" type="hidden" value="9066" /><input data-val="true" data-val-number="The field SellerOrderId must be a number." id="SellerOrderId" name="SellerOrderId" type="hidden" value="19062773" /><input data-val="true" data-val-number="The field CreatedByUserId must be a number." data-val-required="The CreatedByUserId field is required." id="CreatedByUserId" name="CreatedByUserId" type="hidden" value="56504" /><input data-val="true" data-val-date="The field CreatedAt must be a date." data-val-required="The CreatedAt field is required." id="CreatedAt" name="CreatedAt" type="hidden" value="12/13/2016 8:37:04 AM" />        <table>
+            <tr>
+                <td style="vertical-align:top;padding-top:10px;padding-right:5px;">
+                    <label for="AdjustmentAmt">Adjustment Amount</label>
+                </td>
+                <td>
+                    <input data-val="true" data-val-number="The field Adjustment Amount must be a number." data-val-required="You must enter a value for Adjustment Amount" id="AdjustmentAmt" name="AdjustmentAmt" type="text" value="0" />
+                    <span class="field-validation-valid" data-valmsg-for="AdjustmentAmt" data-valmsg-replace="true"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align:top;padding-top:10px;padding-right:5px;">
+                    <label for="AdjustmentReason">Adjustment Reason</label>
+                </td>
+                <td>
+                    <textarea cols="20" data-val="true" data-val-length="Adjustment Reason must be 500 characters or less" data-val-length-max="500" data-val-required="You must enter a value for Adjustment Reason" id="AdjustmentReason" name="AdjustmentReason" rows="2">
+</textarea>
+                    <span class="field-validation-valid" data-valmsg-for="AdjustmentReason" data-valmsg-replace="true"></span>
+                </td>
+            </tr>
+        </table>
+        <div class="clear"></div>
+        <br />
+        <input id="addPaymentAdjustmentSubmit" type="button" value="Save" onclick="SubmitPaymentAdjustment();" /><span class="cancel-link">&nbsp;or <a href="javascript:void(0)" onclick="HideAddPaymentAdjustmentDialog()">Cancel</a></span>
+</form></div>
+    </div>
+
+<div id="MessageModal" style="text-align: center; display: none;">
+    <center>
+        <div class="spin">
+            <br />
+            <div title="Code: 0xe800" class="the-icons span3"><i class="icon-spin5 animate-spin"></i> </div>
+        </div>
+    </center>
+    <br />
+    <div style="text-align: right;"><a style="color: #0066CC;" href="javascript:void(0)" class="closeModal">Cancel</a></div>
+</div>
+            <!-- Dynamic widgets with location = Bottom -->
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="wrapper">
+            &copy; 2016 Ascension Gaming Network, Inc.
+
+                Browsing as SJAuction Company
+
+            <br />
+            <a href="http://store.tcgplayer.com/help/privacypolicy" target="new">Privacy Policy</a>
+            <br />
+            (TCGplayer.com Seller Portal
+            <span style="font-size: 13px;">v3109</span>)
+        </div>
+    </div>
+
+    <div id="feedback-dialog" style="display:none">
+
+        <div style="width:400px;">
+<form action="/admin/Home/SubmitFeedback" class="form" id="SiteFeedbackForm" method="post" style="text-align:left"><input data-val="true" data-val-length="ClickedFromFeature must be between 1 and 5000 characters." data-val-length-max="5000" data-val-length-min="1" data-val-required="ClickedFromFeature is required." id="ClickedFromFeature" name="ClickedFromFeature" type="hidden" value="/admin/orders/manageorder/09066-2C1B54-EBB09" />        <div style="font-size:12px">Thank you for taking the time to provide feedback to TCGplayer.com!  We value our customer input and view it as a key driver of innovation for our company.  Our goal is to be the best in the business, and your feedback will help us make that happen!</div>
+        <br />
+        <label>Page or Feature</label><input data-val="true" data-val-length="UserEnteredFeature must be between 1 and 5000 characters." data-val-length-max="5000" data-val-length-min="1" data-val-required="Page or Feature is required." id="UserEnteredFeature" name="UserEnteredFeature" style="width:344px;" type="text" value="orders/manageorder" /><span class="field-validation-valid" data-valmsg-for="UserEnteredFeature" data-valmsg-replace="true"></span>        <label>Feedback</label>
+<textarea cols="20" data-val="true" data-val-length="Feedback must be between 1 and 5000 characters." data-val-length-max="5000" data-val-length-min="1" data-val-required="Feedback is required." id="Body" name="Body" rows="2" style="width:344px;height:200px">
+</textarea><span class="field-validation-valid" data-valmsg-for="Body" data-valmsg-replace="true"></span>        <div class="buttons" id="site-feedback-buttons">
+            <input id="site-feedback-submit" type="submit" value="Submit Feedback" /><span class="cancel-link">&nbsp;or <a href="javascript:void(0)" onclick="HideFeedbackDialog()">Cancel</a></span>
+        </div>
+        <div class="buttons" id="feedback-processing-div" style="display:none">
+            Processing...Please wait
+        </div>
+</form></div>
+    </div>
+
+    <div class="pageOverlay"></div>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        var pageTracker = _gat._getTracker("UA-620217-1");
+        pageTracker._setDomainName(".tcgplayer.com");
+        pageTracker._setAllowHash(false);
+        pageTracker._setAllowLinker();
+        pageTracker._trackPageview();
+    </script>
+</body>
+</html>

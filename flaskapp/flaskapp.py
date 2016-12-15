@@ -55,6 +55,7 @@ def welcome(name):
 		name = name[:12] 
 	if not tnPoll():
 		page = u'<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+		page += '<style type="text/css">button[type=submit] {width:10em; height:10em;}</style>'
 		page += '<form action="." method="POST">\n'
 		page += "Spawn Enemies:<br>"
 		page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "0", "Spawn Skele")
@@ -96,4 +97,4 @@ def act():
 	return redirect('/welcome/{}'.format(action.split(",")[0]))
 	
 if __name__ == "__main__":
-	app.run(host= '0.0.0.0')
+	app.run(host= '0.0.0.0', debug=True)
