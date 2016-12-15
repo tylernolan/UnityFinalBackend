@@ -23,13 +23,13 @@ def tnSend(command):
 def tnPoll():
 	HOST, PORT = "localhost", 9999
 	tn = telnetlib.Telnet(HOST, port = PORT)
-	tn.write("isboss"+"\r\n")
-	received = tn.read_until("\n").strip() == "True"
+	tn.write("getstate"+"\r\n")
+	received = tn.read_until("\n").strip()
 	tn.close()
 	return received
 
 def getImageFromFolder():
-	#I tried to get flask workign with local images on my windows box but it wasn't working, this is a really shitty workaround I hope to have fixed before the presentation.
+	#I tried to get flask working with local images on my windows box but it wasn't working, this is a really shitty workaround I hope to have fixed before the presentation.
 	images = ["http://i.imgur.com/2EBb9wZ.jpg", "http://i.imgur.com/OdR8lyP.png", "http://i.imgur.com/Qb3c5gf.jpg", 
 			"http://i.imgur.com/MEWNY5G.jpg", "http://i.imgur.com/Y3jpQHm.jpg"]
 	return random.choice(images) 
@@ -53,7 +53,8 @@ def welcome(name):
 		name = r.sub("*"*len(word), name)
 	if len(name) > 12:
 		name = name[:12] 
-	if not tnPoll():
+	state = tnPoll()
+	if state == "Main":
 		page = u'<meta name="viewport" content="width=device-width, initial-scale=1.0">'
 		page += '<style type="text/css">button[type=submit] {width:10em; height:7em;}</style>'
 		page += '<form action="." method="POST">\n'
@@ -73,12 +74,12 @@ def welcome(name):
 		page += u'<button name ="action" type="submit" value="{},{}">{}</button>\n'.format(str(name), "5", "Say Nice Things")
 		page +='</form>'	
 		return page
-	else:
+	elif state == "Boss":
 		img = getImageFromFolder()
 		page = ""
 		page +="<!DOCTYPE html>\n"
 		page +="<html>\n"
-		page = u'<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+		page += u'<meta name="viewport" content="width=device-width, initial-scale=1.0">'
 		page +="<body>\n"
 		page +="<h2>Give Me Your Energy!</h2>\n"
 		#page += '<img src = {} style="width:304px;height:228px;">'.format(img)
@@ -86,8 +87,10 @@ def welcome(name):
 		page +="</body>\n"
 		page +="</html>\n"
 		return page
+	elif state == "Credits":
+		return open("credits.html").read()
 	
-@app.route('/welcome/', methods=["POST"])	
+@app.route('/welcome/', methods=["POST"])
 def act():
 	action = request.form['action']
 	try:
