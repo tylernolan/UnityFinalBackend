@@ -98,7 +98,7 @@ def act():
 	except BaseException, e:
 		print e
 	return redirect('/welcome/{}'.format(action.split(",")[0]))
-app.route('/plot/')
+@app.route('/plot/')
 def plot():
 	return open("plot.html").read()
 if __name__ == "__main__":
