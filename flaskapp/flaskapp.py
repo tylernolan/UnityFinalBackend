@@ -98,6 +98,8 @@ def act():
 	except BaseException, e:
 		print e
 	return redirect('/welcome/{}'.format(action.split(",")[0]))
-	
+app.route('/plot/')
+def plot():
+	return open("plot.html").read()
 if __name__ == "__main__":
 	app.run(host= '0.0.0.0')
